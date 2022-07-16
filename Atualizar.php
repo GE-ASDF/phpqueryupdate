@@ -1,36 +1,12 @@
 <?php
+
 namespace app\models;
 use app\core\Model;
-use Exception;
 
 class Atualizar extends Model{
     protected $sql = "";
     protected $where = false;
-    public function concluirAula($dados){
-        $sql = "INSERT INTO aulas_assistidas SET 
-        idusuario= :idusuario,
-        idaula= :idaula,
-        idcurso= :idcurso,
-        data_assistida= :data,
-        hora_assistida= :hora";
-        $update = $this->db->prepare($sql);
-        $update->bindValue(":idusuario", $dados->idusuario);
-        $update->bindValue(":idaula", $dados->idaula);
-        $update->bindValue(":idcurso", $dados->idcurso);
-        $update->bindValue(":data", date("Y-m-d"));
-        $update->bindValue(":hora", date("H:m:i"));
-        $updated = $update->execute();
-        return $updated;
-    }
-    public function resetarAula($dados){
-        $sql = "DELETE FROM aulas_assistidas WHERE idusuario= :idusuario AND idaula= :idaula AND idcurso= :idcurso";
-        $delete = $this->db->prepare($sql);
-        $delete->bindValue(":idusuario", $dados->idusuario);
-        $delete->bindValue(":idaula", $dados->idaula);
-        $delete->bindValue(":idcurso", $dados->idcurso);
-        $deleted = $delete->execute();
-        return $deleted;
-    }
+
     /* FUNÇÃO DE ATUALIZAÇÃO DE REGISTROS. */
     public function update($table){
         return $this->sql = "UPDATE {$table} SET ";
