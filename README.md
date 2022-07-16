@@ -1,2 +1,2 @@
 # phpqueryupdate
-Um querybuilder de atualização no PHP
+Uma querybuilder de atualização no PHP
