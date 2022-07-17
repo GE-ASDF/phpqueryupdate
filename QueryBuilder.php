@@ -3,7 +3,7 @@
 namespace app\models;
 use app\core\Model;
 
-class Atualizar extends Model{
+class QueryBuilder extends Model{
     protected $sql = "";
     protected $where = false;
 
