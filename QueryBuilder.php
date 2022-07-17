@@ -6,7 +6,12 @@ use app\core\Model;
 class QueryBuilder extends Model{
     protected $sql = "";
     protected $where = false;
-
+    
+    /* FUNÇÃO PARA INSERÇÃO DE REGISTROS */
+    public function insert($table){
+        return $this->sql = "INSERT INTO {$table} SET ";
+    }
+    
     /* FUNÇÃO DE ATUALIZAÇÃO DE REGISTROS. */
     public function update($table){
         return $this->sql = "UPDATE {$table} SET ";
